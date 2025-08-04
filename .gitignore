@@ -5,3 +5,4 @@ npm-debug.log
 *.class
 *.jar
 tour-service/target
+.idea/*
