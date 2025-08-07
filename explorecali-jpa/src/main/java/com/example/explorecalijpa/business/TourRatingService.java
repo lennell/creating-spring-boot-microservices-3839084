@@ -5,6 +5,8 @@ import java.util.NoSuchElementException;
 import java.util.Optional;
 import java.util.OptionalDouble;
 
+import com.example.explorecalijpa.web.RatingDto;
+import jakarta.validation.Valid;
 import org.springframework.stereotype.Service;
 
 import com.example.explorecalijpa.model.Tour;
@@ -165,4 +167,7 @@ public class TourRatingService {
             + tourId + " for customer" + customerId));
   }
 
+    public void createTourRating(int tourId, @Valid RatingDto ratingDto) {
+
+    }
 }
