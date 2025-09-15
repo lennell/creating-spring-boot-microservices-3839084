@@ -3,6 +3,7 @@ package com.example.explorecaliimages.business;
 import com.example.explorecaliimages.model.IdName;
 import com.example.explorecaliimages.model.Image;
 
+import com.example.explorecaliimages.repo.ImageRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,22 +12,27 @@ import java.util.Optional;
 @Service
 public class ImageService {
 
-    public ImageService() {
+    private ImageRepository imageRepository;
+
+    public ImageService(ImageRepository imageRepository) {
+        this.imageRepository = imageRepository;
     }
 
     public Image saveImage(Image image) {
-        return null;
+        return imageRepository.save(image);
     }
 
     public Optional<Image> getImage(String id) {
-        return null;
+
+        return imageRepository.findById(id);
     }
 
     public Optional<Image> findByName(String name) {
-        return null;
+        return imageRepository.findByFileName(name);
     }
 
     public List<IdName> findIdNames() {
-        return null;
+
+        return imageRepository.findIdNameBy();
     }
 }
